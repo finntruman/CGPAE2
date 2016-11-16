@@ -25,6 +25,8 @@ private:
 	Vector m_viewportPos;
 	Vector m_playerPos;
 	int m_screenWidth, m_screenHeight;
+	float m_viewportXMax, m_viewportYMax;
+	Vector m_screenSizeLevelSpace;
 
 	void DrawLevel();
 
@@ -38,6 +40,8 @@ public:
 
 	Vector WorldSpaceToLevelSpace(int x, int y);
 	Vector WorldSpaceToLevelSpace(Vector position);
+
+	int Clamp(int toClamp, int min, int max);
 
 	int GetHeight() { return c_levelLayout.size(); } //returns the height of the map in LevelSpace
 	int GetWidth() { return c_levelLayout[0].length(); } //returns the width of the map in LevelSpace

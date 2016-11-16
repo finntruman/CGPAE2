@@ -52,7 +52,7 @@ GameManager::GameManager()
 	p_textManager = new TextManager(*m_renderer);
 	//CreateMenu({ "Hello", "World", "The third test option" }, "DejaVu small");
 	p_level = new Level(*m_renderer, 640, 480);
-	CreatePlayer({ 128, 320 }, "assets/player.bmp", 100, 100);
+	CreatePlayer({ 128, 64 }, "assets/player.bmp", 100, 100);
 }
 
 GameManager::~GameManager()

@@ -4,6 +4,7 @@
 Player::Player(SDL_Renderer &renderer, Level &levelLayout, Input &input, Vector position, std::vector<std::string> sprite)
 	: Character(renderer, levelLayout, position, sprite), p_input(&input)
 {
+	p_sprite.ChangeCollisionShape(35, p_sprite.GetSpriteHeight());
 }
 
 Player::~Player()

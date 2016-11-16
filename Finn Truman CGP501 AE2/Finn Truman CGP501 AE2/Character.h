@@ -25,7 +25,7 @@ protected:
 	bool Jump();
 	bool Shoot();
 
-	//int Sign(float num);
+	int Sign(float num);
 
 public:
 	Character(SDL_Renderer &renderer, Level &levelLayout, Vector position, std::vector<std::string> sprite);

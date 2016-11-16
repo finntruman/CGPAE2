@@ -2,7 +2,7 @@
 #include "Actor.h"
 
 Sprite::Sprite(SDL_Renderer &renderer, Actor &parent, std::vector<std::string> sprites)
-	: p_renderer(&renderer), p_parent(&parent), c_spriteSequence(sprites), m_spriteFrame(0), m_animationSpeed(1), m_animationDelay(0)
+	: p_renderer(&renderer), p_parent(&parent), c_spriteSequence(sprites), m_spriteFrame(0), m_animationSpeed(1), m_animationDelay(0), m_useSpriteCollision(true)
 {
 	ChangeImage(c_spriteSequence[0]);
 }
@@ -47,6 +47,11 @@ void Sprite::ChangeImage(std::string sprite)
 	{
 		m_spriteHeight = p_bitmapSurface->h;
 		m_spriteWidth = p_bitmapSurface->w;
+		if (m_useSpriteCollision)
+		{
+			m_collisionHeight = m_spriteHeight;
+			m_collisionWidth = m_spriteWidth;
+		}
 
 		//transparency
 		Uint32 colourKey = SDL_MapRGB(p_bitmapSurface->format, 255, 0, 255);
@@ -82,6 +87,20 @@ void Sprite::DrawSelf()
 		SDL_Rect destRect = { x, y, m_spriteWidth, m_spriteHeight };
 		SDL_RenderCopy(p_renderer, p_bitmapTexture, NULL, &destRect);
 	}
+}
+
+void Sprite::ChangeCollisionShape(int w, int h)
+{
+	if (w == -1 && h == -1)
+	{
+		m_useSpriteCollision = true;
+		m_collisionHeight = m_spriteHeight;
+		m_collisionWidth = m_spriteWidth;
+		return;
+	}
+	m_useSpriteCollision = false;
+	m_collisionWidth = abs(w);
+	m_collisionHeight = abs(h);
 }
 
 std::string Sprite::GetSprite(int frame)
