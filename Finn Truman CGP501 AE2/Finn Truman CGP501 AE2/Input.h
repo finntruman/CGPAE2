@@ -14,7 +14,7 @@ private:
 	int m_keysPressed[KEYS_LIST_SIZE];
 
 	//methods
-	int UpdateKey(int keyState, Uint32 keyboardEventType);
+	int UpdateKey(int keyState, Uint32 keyboardEventType, Uint8 keyboardState);
 
 public:
 	Input();
@@ -25,5 +25,6 @@ public:
 	bool KeyPressed(KEYS_LIST key); //returns true if the key has been pressed, so it will only return true on the first frame the key is held
 	bool KeyHeld(KEYS_LIST key); //returns true if the key is pressed at all
 	bool KeyUp(KEYS_LIST key); //only returns true if the key is released
+	SDL_Event GetEvents() { return m_event; }
 };
 

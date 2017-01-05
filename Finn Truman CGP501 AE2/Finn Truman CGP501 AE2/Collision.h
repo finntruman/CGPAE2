@@ -2,13 +2,15 @@
 #include <string>
 #include "Actor.h"
 
+/*
+	The Collision class is an entity that exists in World Space that causes something to happen when it collides with something else.
+	Collision differs from Character because characters have AI to make them do something, while Collision classes work on basic logic, such as a bullet or collectible
+*/
+
 class Collision : public Actor
 {
-private:
-	std::string m_type;
-
 public:
-	Collision(SDL_Renderer &renderer, Vector position, std::vector<std::string> type); //type is temporarily a vector
+	Collision(SDL_Renderer &renderer, Level &levelLayout, Vector position, std::vector<std::string> sprite);
 	~Collision();
+	void Update();
 };
-

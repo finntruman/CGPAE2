@@ -29,51 +29,62 @@ void Input::Update()
 	//loop through all the events in the event list
 	while (SDL_PollEvent(&m_event) != NULL)
 	{
-		//cache the code of key we pressed for easier debugging
-		SDL_Keycode keyPressed = m_event.key.keysym.sym;
-
-		switch (keyPressed)
+		if (m_event.type == SDL_KEYUP || m_event.type == SDL_KEYDOWN)
 		{
-		case SDLK_w:
-			m_keysPressed[KEY_UP] = UpdateKey(m_keysPressed[KEY_UP], m_event.type);
-			//m_keysPressed[KEY_UP] = UpdateKey(m_keysPressed[KEY_UP]);
-			break;
+			//cache the code of key we pressed for easier debugging
+			SDL_Keycode keyPressed = m_event.key.keysym.sym;
 
-		case SDLK_s:
-			m_keysPressed[KEY_DOWN] = UpdateKey(m_keysPressed[KEY_DOWN], m_event.type);
-			//m_keysPressed[KEY_DOWN] = UpdateKey(m_keysPressed[KEY_DOWN]);
-			break;
+			switch (keyPressed)
+			{
+			case SDLK_w:
+				m_keysPressed[KEY_UP] = UpdateKey(m_keysPressed[KEY_UP], m_event.type, m_event.key.state);
+				//m_keysPressed[KEY_UP] = UpdateKey(m_keysPressed[KEY_UP]);
+				break;
 
-		case SDLK_a:
-			m_keysPressed[KEY_LEFT] = UpdateKey(m_keysPressed[KEY_LEFT], m_event.type);
-			//m_keysPressed[KEY_LEFT] = UpdateKey(m_keysPressed[KEY_LEFT]);
-			break;
+			case SDLK_s:
+				m_keysPressed[KEY_DOWN] = UpdateKey(m_keysPressed[KEY_DOWN], m_event.type, m_event.key.state);
+				//m_keysPressed[KEY_DOWN] = UpdateKey(m_keysPressed[KEY_DOWN]);
+				break;
 
-		case SDLK_d:
-			m_keysPressed[KEY_RIGHT] = UpdateKey(m_keysPressed[KEY_RIGHT], m_event.type);
-			//m_keysPressed[KEY_RIGHT] = UpdateKey(m_keysPressed[KEY_RIGHT]);
-			break;
+			case SDLK_a:
+				m_keysPressed[KEY_LEFT] = UpdateKey(m_keysPressed[KEY_LEFT], m_event.type, m_event.key.state);
+				//m_keysPressed[KEY_LEFT] = UpdateKey(m_keysPressed[KEY_LEFT]);
+				break;
 
-		//case SDLK_SPACE:
-		//	m_keysPressed[KEY_JUMP] = UpdateKey(m_keysPressed[KEY_JUMP], m_event.type);
-		//	//m_keysPressed[KEY_JUMP] = UpdateKey(m_keysPressed[KEY_JUMP]);
-		//	break;
+			case SDLK_d:
+				m_keysPressed[KEY_RIGHT] = UpdateKey(m_keysPressed[KEY_RIGHT], m_event.type, m_event.key.state);
+				//m_keysPressed[KEY_RIGHT] = UpdateKey(m_keysPressed[KEY_RIGHT]);
+				break;
 
-		case SDLK_SPACE:
-			m_keysPressed[KEY_SHOOT] = UpdateKey(m_keysPressed[KEY_SHOOT], m_event.type);
-			//m_keysPressed[KEY_SHOOT] = UpdateKey(m_keysPressed[KEY_SHOOT]);
-			break;
+				//case SDLK_SPACE:
+				//	m_keysPressed[KEY_JUMP] = UpdateKey(m_keysPressed[KEY_JUMP], m_event.type);
+				//	//m_keysPressed[KEY_JUMP] = UpdateKey(m_keysPressed[KEY_JUMP]);
+				//	break;
 
-		case SDLK_ESCAPE:
-			m_keysPressed[KEY_ESCAPE] = UpdateKey(m_keysPressed[KEY_ESCAPE], m_event.type);
-			//m_keysPressed[KEY_ESCAPE] = UpdateKey(m_keysPressed[KEY_ESCAPE]);
-			break;
+			case SDLK_SPACE:
+				m_keysPressed[KEY_SHOOT] = UpdateKey(m_keysPressed[KEY_SHOOT], m_event.type, m_event.key.state);
+				//m_keysPressed[KEY_SHOOT] = UpdateKey(m_keysPressed[KEY_SHOOT]);
+				break;
+
+			case SDLK_ESCAPE:
+				m_keysPressed[KEY_ESCAPE] = UpdateKey(m_keysPressed[KEY_ESCAPE], m_event.type, m_event.key.state);
+				//m_keysPressed[KEY_ESCAPE] = UpdateKey(m_keysPressed[KEY_ESCAPE]);
+				break;
+			}
 		}
 	}
 }
 
-int Input::UpdateKey(int keyState, Uint32 keyboardEventType)
+int Input::UpdateKey(int keyState, Uint32 keyboardEventType, Uint8 keyboardState)
 {
+	/*if (keyboardEventType == SDL_KEYDOWN)
+	{
+		if (keyboardState == SDL_PRESSED) return PRESSED;
+		else return DOWN;
+	}
+	else if (keyboardEventType == SDL_KEYUP) return RELEASED;
+	return INACTIVE;*/
+
 	if (keyboardEventType == SDL_KEYDOWN) //if the SDL event is a KeyDown event...
 	{
 		if (keyState == INACTIVE) return PRESSED; //if the key is INACTIVE, then it must have just been pressed this frame, so set it to PRESSED
@@ -90,7 +101,7 @@ bool Input::KeyPressed(KEYS_LIST key)
 
 bool Input::KeyHeld(KEYS_LIST key)
 {
-	return (m_keysPressed[key] == DOWN || m_keysPressed[key] == PRESSED);
+	return (m_keysPressed[key] == PRESSED || m_keysPressed[key] == DOWN);
 }
 
 bool Input::KeyUp(KEYS_LIST key)

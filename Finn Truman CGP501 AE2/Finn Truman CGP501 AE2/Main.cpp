@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "GameManager.h"
 
 int main(int argc, char* argv[])
@@ -8,7 +7,6 @@ int main(int argc, char* argv[])
 	do
 	{
 		game->Update();
-		//getchar();
 	} while (!game->CheckEscape());
 
 	delete game;

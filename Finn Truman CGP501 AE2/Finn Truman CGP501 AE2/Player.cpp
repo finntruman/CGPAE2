@@ -1,9 +1,11 @@
 #include "Player.h"
 #include "Input.h"
 
-Player::Player(SDL_Renderer &renderer, Level &levelLayout, Input &input, Vector position, std::vector<std::string> sprite)
-	: Character(renderer, levelLayout, position, sprite), p_input(&input)
+Player::Player(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, Input &input, Vector position, std::vector<std::string> sprite)
+	: Character(manager, renderer, levelLayout, position, sprite, 100), p_input(&input), m_canShoot(true)
 {
+	//the tip of the player's gun adds to the sprite's maximum width, which I found to be irritating, as one would measure one's collision width by their body
+	//this function narrows the collision width of the player slightly
 	p_sprite.ChangeCollisionShape(35, p_sprite.GetSpriteHeight());
 }
 
@@ -14,9 +16,27 @@ Player::~Player()
 void Player::Update()
 {
 	//check for key presses
-	if (p_input->KeyHeld(KEY_LEFT)) m_hspeed -= m_moveSpeed;
-	if (p_input->KeyHeld(KEY_RIGHT)) m_hspeed += m_moveSpeed;
+	if (p_input->KeyHeld(KEY_LEFT))
+	{
+		m_hspeed -= m_moveSpeed;
+		m_facing = SDL_FLIP_HORIZONTAL;
+	}
+	if (p_input->KeyHeld(KEY_RIGHT))
+	{
+		m_hspeed += m_moveSpeed;
+		m_facing = SDL_FLIP_NONE;
+	}
 	if (p_input->KeyHeld(KEY_UP)) Jump();
+	//if (p_input->KeyPressed(KEY_SHOOT)) Shoot();
+	if (p_input->KeyPressed(KEY_SHOOT))
+	{
+		if (m_canShoot) Shoot();
+		m_canShoot = false;
+	}
+	if (p_input->KeyUp(KEY_SHOOT))
+	{
+		m_canShoot = true;
+	}
 
 	//check for state changes
 	if (m_hspeed == 0) m_stateMachine = STT_IDLE;

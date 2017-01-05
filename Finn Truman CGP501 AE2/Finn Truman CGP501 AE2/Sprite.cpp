@@ -15,18 +15,17 @@ Sprite::~Sprite()
 	p_parent = nullptr;
 }
 
-void Sprite::ChangeSprite(std::vector<std::string> sprites)
+void Sprite::ChangeSprite(std::vector<std::string> images)
 {
-	c_spriteSequence.clear();
-	c_spriteSequence = sprites;
-	std::string newImage = c_spriteSequence[0];
-	ChangeImage(newImage);
+	c_spriteSequence.clear(); //clears the sprite we have
+	c_spriteSequence = images; //sets the sprite to the one that's just been passed
+	ChangeImage(c_spriteSequence[0]); //automatically resets the sprite's sequence back to the first frame
 }
 
 void Sprite::ChangeSprite(std::string sprite)
 {
-	c_spriteSequence.clear();
-	c_spriteSequence.push_back(sprite);
+	c_spriteSequence.clear(); //clears the sprite we have
+	c_spriteSequence.push_back(sprite); //and simply puts the new images into the sequence
 	ChangeImage(sprite);
 }
 
@@ -69,14 +68,17 @@ void Sprite::ChangeImage(std::string sprite)
 
 void Sprite::DrawSelf()
 {
-	m_animationDelay++;
-	if (m_animationDelay >= m_animationSpeed)
+	if (c_spriteSequence.size() > 1)
 	{
-		m_animationDelay = 0;
-		m_spriteFrame++;
-		if (m_spriteFrame >= c_spriteSequence.size()) m_spriteFrame = 0;
-		std::string newImage = c_spriteSequence[m_spriteFrame];
-		ChangeImage(newImage);
+		m_animationDelay++;
+		if (m_animationDelay >= m_animationSpeed)
+		{
+			m_animationDelay = 0;
+			m_spriteFrame++;
+			if (m_spriteFrame >= c_spriteSequence.size()) m_spriteFrame = 0;
+			std::string newImage = c_spriteSequence[m_spriteFrame];
+			ChangeImage(newImage);
+		}
 	}
 
 	//render the bitmap at the x/y coords
@@ -85,7 +87,13 @@ void Sprite::DrawSelf()
 		int x = p_parent->GetPosition(true).x;
 		int y = p_parent->GetPosition(true).y;
 		SDL_Rect destRect = { x, y, m_spriteWidth, m_spriteHeight };
-		SDL_RenderCopy(p_renderer, p_bitmapTexture, NULL, &destRect);
+		SDL_RenderCopyEx( //SDL_RenderCopy is the function used to render a texture to the rendering target. RenderCopyEx has extended features
+			p_renderer, //the renderer to use
+			p_bitmapTexture, //the texture to render
+			NULL, //the source SDL_Rect structure or NULL for the entire texture
+			&destRect, //the destination SDL_Rect structure or NULL for the entire rendering target, that being the whole screen
+			0, NULL, //the angle and pivot points to rotate the image, NULL on the pivot point for centre
+			p_parent->GetFlip()); //This parameter has a data type of SDL_RenderFlip, which can have values of SDL_FLIP_NONE, SDL_FLIP_HORIZONTAL or SDL_FLIP_VERTICAL
 	}
 }
 
