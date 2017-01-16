@@ -2,16 +2,12 @@
 #include "GameManager.h"
 #include <math.h>
 
-AI::AI(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, Vector position, std::vector<std::string> sprite, int health)
-	: Character(manager, renderer, levelLayout, position, sprite, health)
-{
-	p_player = p_manager->GetPlayer();
-}
+AI::AI(Vector position, std::vector<std::string> sprite, int health)
+	: Character(position, sprite, health)
+{}
 
 AI::~AI()
-{
-	if (p_player) p_player = nullptr;
-}
+{}
 
 void AI::Update()
 {

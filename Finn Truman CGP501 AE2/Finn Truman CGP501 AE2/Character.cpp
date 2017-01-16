@@ -3,17 +3,14 @@
 #include "Level.h"
 #include "Vector.h"
 
-Character::Character(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, Vector position, std::vector<std::string> sprite, int health)
-	: Actor(manager, renderer, levelLayout, position, sprite), m_ammo(10), m_health(health),
-	m_hspeed(0.0f), m_vspeed(0.0f), m_moveSpeed(3.5f), m_jumpSpeed(15.0f), m_gravity(0.8f), m_terminalVelocity(12),	m_grounded(false),
-	p_renderer(&renderer)
+Character::Character(Vector position, std::vector<std::string> sprite, int health)
+	: Actor(position, sprite), m_ammo(10), m_health(health),
+	m_hspeed(0.0f), m_vspeed(0.0f), m_moveSpeed(3.5f), m_jumpSpeed(15.0f), m_gravity(0.8f), m_terminalVelocity(12),	m_grounded(false)
 {
 }
 
 Character::~Character()
-{
-	p_renderer = nullptr;
-}
+{}
 
 void Character::Update()
 {
@@ -38,7 +35,7 @@ bool Character::Shoot()
 	{
 		int flip = m_facing == SDL_FLIP_HORIZONTAL ? -1 : 1; //this is set to -1 if the sprite is flipped (facing left) or 1 if not flipped (facing right)
 		//this is a fix to a bug where a bullet that a character fires will be overlapping themselves, therefor hitting them immediately
-		Bullet* bullet = new Bullet(*p_renderer, *p_level, { m_position.x + p_sprite.GetSpriteWidth() * flip, m_position.y + p_sprite.GetSpriteHeight() / 2 }, 10);
+		Bullet* bullet = new Bullet({ m_position.x + m_sprite.GetSpriteWidth() * flip, m_position.y + m_sprite.GetSpriteHeight() / 2 }, 10);
 		p_manager->AddBullet(*bullet);
 		bullet->SetFlip(m_facing);
 		m_ammo--;

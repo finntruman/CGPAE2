@@ -1,5 +1,5 @@
 #pragma once
-#include "SDL.h"
+#include "GameObject.h"
 #include "Vector.h"
 #include <vector>
 #include <string>
@@ -19,11 +19,10 @@ enum LevelTextures
 	T_DIRT0, T_DIRT1
 };
 
-class Level
+class Level : public GameObject
 {
 private:
 	//members
-	SDL_Renderer* p_renderer;
 	SDL_Texture* m_texture; //this texture is to render the walls
 	std::vector<SDL_Texture*> c_textures;
 
@@ -38,11 +37,11 @@ private:
 	float m_viewportXMax, m_viewportYMax; //the maximum X and Y the viewport can go to
 	Vector m_screenSizeLevelSpace;
 
-	//members
+	//methods
 	void DrawLevel();
 
 public:
-	Level(SDL_Renderer &renderer, int screenWidth, int screenheight);
+	Level(int screenWidth, int screenheight);
 	~Level();
 	
 	void Update();
@@ -53,8 +52,6 @@ public:
 	Vector WorldSpaceToLevelSpace(Vector position);
 	Vector LevelSpaceToWorldSpace(int x, int y);
 	Vector LevelSpaceToWorldSpace(Vector position);
-
-	int Clamp(int toClamp, int min, int max); //for some reason the Clamp function have become obsolete in the Math library, so I made my own. Since it's the only function I need from the Math library, it's best to make my own anyway so I don't include a whole extra library
 
 	int GetHeight() { return c_levelLayout.size(); } //returns the height of the map in LevelSpace
 	int GetWidth() { return c_levelLayout[0].length(); } //returns the width of the map in LevelSpace

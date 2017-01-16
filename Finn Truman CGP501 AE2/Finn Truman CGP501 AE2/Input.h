@@ -1,12 +1,12 @@
 #pragma once
-#include "SDL.h"
+#include "GameObject.h"
 
 enum KEYS_LIST
 {
 	KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_JUMP, KEY_SHOOT, KEY_ESCAPE, KEYS_LIST_SIZE
 };
 
-class Input
+class Input : public GameObject
 {
 private:
 	//members

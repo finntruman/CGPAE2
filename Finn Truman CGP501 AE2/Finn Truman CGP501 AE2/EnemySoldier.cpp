@@ -1,7 +1,7 @@
 #include "EnemySoldier.h"
 
-EnemySoldier::EnemySoldier(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, Vector position, std::vector<std::string> sprite, int points, int health, float toleranceRange)
-	: Enemy(manager, renderer, levelLayout, position, sprite, points, health), m_playerToleranceRange(toleranceRange)
+EnemySoldier::EnemySoldier(Vector position, std::vector<std::string> sprite, int points, int health, float toleranceRange)
+	: Enemy(position, sprite, points, health), m_playerToleranceRange(toleranceRange)
 {
 	SetSpeed(2.8f);
 	m_playerToleranceRange = 250.0f;

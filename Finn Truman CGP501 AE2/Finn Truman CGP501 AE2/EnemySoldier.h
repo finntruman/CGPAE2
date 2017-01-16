@@ -12,7 +12,7 @@ private:
 	void State_Hostile();
 
 public:
-	EnemySoldier(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, Vector position, std::vector<std::string> sprite, int points, int health, float toleranceRange = 250.0f);
+	EnemySoldier(Vector position, std::vector<std::string> sprite, int points, int health, float toleranceRange = 250.0f);
 	~EnemySoldier();
 
 	void Update();

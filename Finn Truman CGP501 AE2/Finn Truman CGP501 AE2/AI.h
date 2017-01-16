@@ -10,13 +10,12 @@ enum STATES_ENEMY
 class AI : public Character
 {
 protected:
-	Player* p_player;
 	STATES_ENEMY m_stateMachine;
 
 	float DistanceToPlayer();
 
 public:
-	AI(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, Vector position, std::vector<std::string> sprite, int health);
+	AI(Vector position, std::vector<std::string> sprite, int health);
 	~AI();
 	void Update();
 };

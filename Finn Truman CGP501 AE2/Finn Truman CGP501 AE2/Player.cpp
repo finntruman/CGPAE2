@@ -1,12 +1,12 @@
 #include "Player.h"
 #include "Input.h"
 
-Player::Player(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, Input &input, Vector position, std::vector<std::string> sprite)
-	: Character(manager, renderer, levelLayout, position, sprite, 100), p_input(&input), m_canShoot(true)
+Player::Player(Vector position, std::vector<std::string> sprite)
+	: Character(position, sprite, 100), m_canShoot(true)
 {
 	//the tip of the player's gun adds to the sprite's maximum width, which I found to be irritating, as one would measure one's collision width by their body
 	//this function narrows the collision width of the player slightly
-	p_sprite.ChangeCollisionShape(35, p_sprite.GetSpriteHeight());
+	m_sprite.ChangeCollisionShape(35, m_sprite.GetSpriteHeight());
 }
 
 Player::~Player()
@@ -59,23 +59,23 @@ void Player::Update()
 
 void Player::State_Idle()
 {
-	if (p_sprite.GetSprite() != "assets/player.bmp")
+	if (m_sprite.GetSprite() != "assets/player.bmp")
 	{
-		p_sprite.ChangeSprite("assets/player.bmp");
-		p_sprite.SetSpeed(1);
+		m_sprite.ChangeSprite("assets/player.bmp");
+		m_sprite.SetSpeed(1);
 	}
 }
 
 void Player::State_Moving()
 {
-	if (p_sprite.GetSprite().compare(7, 10, "player_run") != 0) //if the 10 characters after the 7th are not "player_run"
+	if (m_sprite.GetSprite().compare(7, 10, "player_run") != 0) //if the 10 characters after the 7th are not "player_run"
 	{
 		std::vector<std::string> newSpriteSequence; //creates a new vector of strings...
 		for (int i = 2; i >= 0; i--)
 		{
 			newSpriteSequence.push_back("assets/player_run" + std::to_string(i) + ".bmp"); //and fills it with all of the "player_run" animation frames
 		}
-		p_sprite.ChangeSprite(newSpriteSequence); //then changes its sprite
-		p_sprite.SetSpeed(5);
+		m_sprite.ChangeSprite(newSpriteSequence); //then changes its sprite
+		m_sprite.SetSpeed(5);
 	}
 }

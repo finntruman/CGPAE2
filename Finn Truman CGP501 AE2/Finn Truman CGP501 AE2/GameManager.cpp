@@ -12,6 +12,9 @@
 
 GameManager::GameManager()
 {
+	if (!p_manager) p_manager = this;
+	else return;
+
 	//the 'if (true)' is simply here so all the SDL stuff can be minimized
 	if (true)
 	{
@@ -50,12 +53,14 @@ GameManager::GameManager()
 			return;
 		}
 
+		p_renderer = m_renderer;
+
 		m_ui_font = TTF_OpenFont("assets/DejaVuSans.ttf", 20);
 	}
 	
 	//now we've finished SDL setup, make game objects
 	p_input = new Input();
-	p_level = new Level(*m_renderer, 640, 480);
+	p_level = new Level(640, 480);
 	CreatePlayer({ 70, 635 }, "assets/player.bmp", 100, 100);
 	SpawnEnemy({ 840, 512 }, 1, 10);
 }
@@ -207,21 +212,21 @@ void GameManager::CreatePlayer(Vector position, std::string sprite, int ammo, in
 	if (p_player) return;
 	std::vector<std::string> sprites;
 	sprites.push_back(sprite);
-	p_player = new Player(*this, *m_renderer, *p_level, *p_input, position, sprites);
+	p_player = new Player(position, sprites);
 	p_player->SetAmmo(ammo);
 	p_player->SetHealth(health);
 }
 
 void GameManager::SpawnEnemy(Vector position, int health, int points, std::string sprite)
 {
-	p_enemies.push_back(new EnemySoldier(*this, *m_renderer, *p_level, position, { sprite }, 10, 1));
+	p_enemies.push_back(new EnemySoldier(position, { sprite }, 10, 1));
 }
 
 void GameManager::CreateCollectible(Vector position, int type)
 {
 	//0 = health
 	//1 = ammo
-	p_collectibles.push_back(new Collectible(*m_renderer, *p_level, position, type));
+	p_collectibles.push_back(new Collectible(position, type));
 }
 
 void GameManager::UpdateText(int x, int y, std::string msg, SDL_Color colour)
@@ -287,57 +292,7 @@ bool GameManager::CheckEscape()
 	return p_input->KeyPressed(KEY_ESCAPE);
 }
 
-float GameManager::DistanceTo(Vector point1, Vector point2)
-{
-	Vector pointB(point1.x, point2.y);
-
-	float AtoB = pointB.x - point1.x;
-	float BtoC = point2.y - pointB.y;
-
-	//sqrt(A*A + B*B)
-	return std::sqrt(AtoB*AtoB + BtoC*BtoC);
-}
-
 void GameManager::AddBullet(Bullet &bullet)
 {
 	p_bullets.push_back(&bullet);
-}
-
-bool GameManager::CollisionPoint_Map(float x, float y)
-{
-	Vector mapVector = p_level->WorldSpaceToLevelSpace(x, y);
-	if (p_level->GetLevelCoord(mapVector) == '.')
-	{
-		return false; //it was a dot, no collision, return false
-	}
-	else return true; //it was something other than a dot, collision, return true
-}
-
-bool GameManager::CollisionPoint_Map(Vector travel)
-{
-	return CollisionPoint_Map(travel.x, travel.y);
-}
-
-bool GameManager::CollisionSprite_Object(Actor* collision1, Actor* collision2)
-{
-	float spr1_L, spr1_T, spr1_R, spr1_B, spr2_L, spr2_T, spr2_R, spr2_B;
-
-	spr1_L = collision1->GetPosition().x;
-	spr1_R = spr1_L + collision1->GetSprite()->GetCollisionWidth() - 1;
-	spr1_T = collision1->GetPosition().y;
-	spr1_B = spr1_T + collision1->GetSprite()->GetCollisionHeight() - 1;
-
-	spr2_L = collision2->GetPosition().x;
-	spr2_R = spr2_L + collision2->GetSprite()->GetCollisionWidth() - 1;
-	spr2_T = collision2->GetPosition().y;
-	spr2_B = spr2_T + collision2->GetSprite()->GetCollisionHeight() - 1;
-
-	if (spr1_L < spr2_R &&
-		spr1_R > spr2_L &&
-		spr1_T < spr2_B &&
-		spr1_B > spr2_T)
-	{
-		return true;
-	}
-	else return false;
 }

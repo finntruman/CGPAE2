@@ -1,38 +1,297 @@
-﻿Build started 08/01/2017 13:33:37.
+﻿Build started 16/01/2017 12:52:29.
      1>Project "E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Finn Truman CGP501 AE2\Finn Truman CGP501 AE2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt GameManager.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt AI.cpp Actor.cpp Bullet.cpp Character.cpp Collectible.cpp Collision.cpp Enemy.cpp EnemySoldier.cpp GameManager.cpp GameObject.cpp Input.cpp Level.cpp Main.cpp Player.cpp Sprite.cpp
+         Sprite.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(9): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(9): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(9): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(10): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(10): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(13): error C2039: 'vector': is not a member of 'std'
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\predefined c++ types (compiler internal)(208): note: see declaration of 'std'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(13): error C2143: syntax error: missing ';' before '<'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(13): error C2039: 'string': is not a member of 'std'
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\predefined c++ types (compiler internal)(208): note: see declaration of 'std'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(13): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(23): error C2039: 'string': is not a member of 'std'
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\predefined c++ types (compiler internal)(208): note: see declaration of 'std'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(23): error C3646: 'm_image': unknown override specifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(23): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(25): error C2039: 'string': is not a member of 'std'
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\predefined c++ types (compiler internal)(208): note: see declaration of 'std'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(25): error C2061: syntax error: identifier 'string'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(36): error C2039: 'string': is not a member of 'std'
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\predefined c++ types (compiler internal)(208): note: see declaration of 'std'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(36): error C2061: syntax error: identifier 'string'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(37): error C2039: 'vector': is not a member of 'std'
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\predefined c++ types (compiler internal)(208): note: see declaration of 'std'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(37): error C2061: syntax error: identifier 'vector'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(37): error C2535: 'void Sprite::ChangeSprite(void)': member function already defined or declared
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(36): note: see declaration of 'Sprite::ChangeSprite'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(40): error C2039: 'string': is not a member of 'std'
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\predefined c++ types (compiler internal)(208): note: see declaration of 'std'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(40): error C3646: 'GetSprite': unknown override specifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(40): error C2059: syntax error: '('
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(40): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2334: unexpected token(s) preceding '{'; skipping apparent function body
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(9): error C2065: 'p_bitmapTexture': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(10): error C2065: 'p_bitmapSurface': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(11): error C2065: 'p_parent': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(9): warning C4390: ';': empty controlled statement found; is this the intent?
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(10): warning C4390: ';': empty controlled statement found; is this the intent?
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(15): error C2511: 'void Sprite::Initialise(Actor &,std::vector<std::string,std::allocator<_Ty>>)': overloaded member function not found in 'Sprite'
+                 with
+                 [
+                     _Ty=std::string
+                 ]
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(6): note: see declaration of 'Sprite'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(16): error C2065: 'p_parent': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(17): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(18): error C2597: illegal reference to non-static member 'Sprite::m_spriteFrame'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(19): error C2597: illegal reference to non-static member 'Sprite::m_animationSpeed'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(20): error C2597: illegal reference to non-static member 'Sprite::m_animationDelay'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(21): error C2597: illegal reference to non-static member 'Sprite::m_useSpriteCollision'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(22): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(22): error C2660: 'Sprite::ChangeImage': function does not take 1 arguments
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(26): error C2511: 'void Sprite::ChangeSprite(std::vector<std::string,std::allocator<_Ty>>)': overloaded member function not found in 'Sprite'
+                 with
+                 [
+                     _Ty=std::string
+                 ]
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(6): note: see declaration of 'Sprite'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(27): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(27): error C2228: left of '.clear' must have class/struct/union
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(27): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(28): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(29): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(29): error C2660: 'Sprite::ChangeImage': function does not take 1 arguments
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(33): error C2511: 'void Sprite::ChangeSprite(std::string)': overloaded member function not found in 'Sprite'
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(6): note: see declaration of 'Sprite'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(34): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(34): error C2228: left of '.clear' must have class/struct/union
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(34): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(35): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(35): error C2228: left of '.push_back' must have class/struct/union
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(35): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(36): error C2660: 'Sprite::ChangeImage': function does not take 1 arguments
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(40): error C2511: 'void Sprite::ChangeImage(std::string)': overloaded member function not found in 'Sprite'
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(6): note: see declaration of 'Sprite'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(41): error C2065: 'm_image': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(42): error C2065: 'p_bitmapTexture': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(43): error C2065: 'p_bitmapSurface': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(46): error C2065: 'p_bitmapSurface': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(46): error C2065: 'm_image': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(46): error C2228: left of '.c_str' must have class/struct/union
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(46): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(47): error C2065: 'p_bitmapSurface': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(50): error C2065: 'm_image': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(50): error C2228: left of '.c_str' must have class/struct/union
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(50): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(54): error C2065: 'p_bitmapSurface': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(54): error C2227: left of '->h' must point to class/struct/union/generic type
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(54): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(55): error C2065: 'p_bitmapSurface': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(55): error C2227: left of '->w' must point to class/struct/union/generic type
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(55): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(56): error C2597: illegal reference to non-static member 'Sprite::m_useSpriteCollision'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(58): error C2597: illegal reference to non-static member 'Sprite::m_collisionHeight'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(59): error C2597: illegal reference to non-static member 'Sprite::m_collisionWidth'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(63): error C2065: 'p_bitmapSurface': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(63): error C2227: left of '->format' must point to class/struct/union/generic type
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(63): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(64): error C2065: 'p_bitmapSurface': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(67): error C2065: 'p_bitmapTexture': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(67): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(67): error C2065: 'p_bitmapSurface': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(68): error C2065: 'p_bitmapTexture': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(71): error C2065: 'm_image': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(71): error C2228: left of '.c_str' must have class/struct/union
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(71): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(42): warning C4390: ';': empty controlled statement found; is this the intent?
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(43): warning C4390: ';': empty controlled statement found; is this the intent?
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(78): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(78): error C2228: left of '.size' must have class/struct/union
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(78): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(85): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(85): error C2228: left of '.size' must have class/struct/union
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(85): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(86): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(87): error C2660: 'Sprite::ChangeImage': function does not take 1 arguments
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(92): error C2065: 'p_bitmapTexture': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(94): error C2065: 'p_parent': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(94): error C2227: left of '->GetPosition' must point to class/struct/union/generic type
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(94): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(94): error C2228: left of '.x' must have class/struct/union
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(95): error C2065: 'p_parent': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(95): error C2227: left of '->GetPosition' must point to class/struct/union/generic type
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(95): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(95): error C2228: left of '.y' must have class/struct/union
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(98): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(99): error C2065: 'p_bitmapTexture': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(103): error C2065: 'p_parent': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(103): error C2227: left of '->GetFlip' must point to class/struct/union/generic type
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(103): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(121): error C2039: 'GetSprite': is not a member of 'Sprite'
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(6): note: see declaration of 'Sprite'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(123): error C2065: 'c_spriteSequence': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(123): error C2228: left of '.size' must have class/struct/union
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(123): note: type is 'unknown-type'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.cpp(124): error C2065: 'c_spriteSequence': undeclared identifier
+         Player.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.h(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+         Main.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+         Level.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(26): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(27): warning C4244: '=': conversion from 'unsigned int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(49): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(56): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(57): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(57): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(65): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(66): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(69): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(71): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(78): warning C4838: conversion from 'float' to 'int' requires a narrowing conversion
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(78): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(102): warning C4018: '>': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(103): warning C4018: '>': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(114): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(119): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(124): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\level.cpp(129): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+         Input.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+         GameObject.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gameobject.cpp(35): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gameobject.cpp(41): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gameobject.cpp(73): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gameobject.cpp(74): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gameobject.cpp(75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
          GameManager.cpp
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.h(37): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.h(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
      1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\collectible.h(7): warning C4091: 'static ': ignored on left of 'COLLECTIBLES' when no variable is declared
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(107): warning C4018: '<': signed/unsigned mismatch
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(138): warning C4018: '<': signed/unsigned mismatch
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(153): warning C4018: '<': signed/unsigned mismatch
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(160): warning C4018: '<': signed/unsigned mismatch
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(248): warning C4474: 'printf' : too many arguments passed for format string
-         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(248): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(265): warning C4018: '<': signed/unsigned mismatch
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(273): warning C4018: '<': signed/unsigned mismatch
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(308): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Debug\Finn Truman CGP501 AE2.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Debug\Finn Truman CGP501 AE2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Debug\Finn Truman CGP501 AE2.lib" /MACHINE:X86 Debug\Actor.obj
-         Debug\AI.obj
-         Debug\Bullet.obj
-         Debug\Character.obj
-         Debug\Collectible.obj
-         Debug\Collision.obj
-         Debug\Enemy.obj
-         Debug\EnemySoldier.obj
-         Debug\GameManager.obj
-         Debug\Input.obj
-         Debug\Level.obj
-         Debug\Main.obj
-         Debug\Player.obj
-         Debug\Sprite.obj
-         Debug\Vector.obj
-         Finn Truman CGP501 AE2.vcxproj -> E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Debug\Finn Truman CGP501 AE2.exe
-     1>Done Building Project "E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Finn Truman CGP501 AE2\Finn Truman CGP501 AE2.vcxproj" (Build target(s)).
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(112): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(143): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(158): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(165): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(270): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(278): warning C4018: '<': signed/unsigned mismatch
+         EnemySoldier.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.h(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\enemysoldier.cpp(6): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\enemysoldier.cpp(51): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+         Enemy.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.h(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+         Collision.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+         Collectible.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\collectible.h(7): warning C4091: 'static ': ignored on left of 'COLLECTIBLES' when no variable is declared
+         Character.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.h(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.cpp(51): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.cpp(52): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+         Bullet.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+         Actor.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\actor.cpp(8): error C2660: 'Sprite::Initialise': function does not take 2 arguments
+         AI.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(7): error C2504: 'GameObject': base class undefined
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2143: syntax error: missing ';' before '*'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(12): error C2238: unexpected token(s) preceding ';'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(31): error C2061: syntax error: identifier 'Actor'
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\sprite.h(43): error C2065: 'p_renderer': undeclared identifier
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.h(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+         Generating Code...
+     1>Done Building Project "E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Finn Truman CGP501 AE2\Finn Truman CGP501 AE2.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:04.98
+Time Elapsed 00:00:23.28

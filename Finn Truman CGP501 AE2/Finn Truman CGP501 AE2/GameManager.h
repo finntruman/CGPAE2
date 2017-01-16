@@ -6,6 +6,8 @@
 #include "SDL.h"
 #include "SDL_ttf.h"
 
+#include "GameObject.h"
+
 struct SDL_Window;
 struct SDL_Renderer;
 
@@ -18,7 +20,7 @@ class Bullet;
 class Collectible;
 struct Vector;
 
-class GameManager
+class GameManager : public GameObject
 {
 private:
 	//SDL stuff
@@ -31,8 +33,6 @@ private:
 	const int MILLISECS_PER_FRAME = 1000 / SCREEN_FPS;
 
 	//pointers
-	Input* p_input;
-	Level* p_level;
 	Player* p_player;
 	std::vector<Bullet*> p_bullets;
 	std::vector<EnemySoldier*> p_enemies;
@@ -55,11 +55,5 @@ public:
 	void KillEnemy(EnemySoldier* toKill);
 	bool CheckEscape();
 
-	float DistanceTo(Vector point1, Vector point2);
 	void AddBullet(Bullet &bullet); //the reason this is called AddBullet and not SpawnBullet is because it simply adds the bullet to the vector, as the bullet is already created in the Character that called it
-	bool CollisionPoint_Map(float x, float y); //This checks to see if there is a collision with the map at the designated coordinates in WorldSpace, which are turned into LevelSpace in the function
-	bool CollisionPoint_Map(Vector travel);
-	bool CollisionSprite_Object(Actor* collision1, Actor* collision2); //This checks to see if the sprite of the Actor the function would trigger a collision with the second parameter at the designated point in WorldSpace
-
-	Player* GetPlayer() { return p_player; }
 };

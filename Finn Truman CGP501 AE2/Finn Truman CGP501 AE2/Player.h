@@ -13,7 +13,6 @@ enum STATES_PLAYER
 class Player : public Character
 {
 private:
-	Input* p_input;
 	STATES_PLAYER m_stateMachine;
 
 	bool m_canShoot;
@@ -23,7 +22,7 @@ private:
 	void State_Moving();
 
 public:
-	Player(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, Input &input, Vector position, std::vector<std::string> sprite);
+	Player(Vector position, std::vector<std::string> sprite);
 	~Player();
 
 	void Update();

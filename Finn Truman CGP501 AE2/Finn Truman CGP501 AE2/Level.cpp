@@ -2,9 +2,12 @@
 #include "Vector.h"
 #include <math.h>
 
-Level::Level(SDL_Renderer &renderer, int screenWidth, int screenheight)
-	: p_renderer(&renderer), m_screenWidth(screenWidth), m_screenHeight(screenheight), m_viewportPos({ 0, 0 })
+Level::Level(int screenWidth, int screenheight)
+	: m_screenWidth(screenWidth), m_screenHeight(screenheight), m_viewportPos({ 0, 0 })
 {
+	if (!p_level) p_level = this;
+	else return;
+
 	//ALL ROWS MUST BE THE SAME LENGTH
 	c_levelLayout.push_back(".................................................W");
 	c_levelLayout.push_back(".................................................W");
@@ -44,7 +47,6 @@ Level::~Level()
 {
 	SDL_DestroyTexture(m_texture);
 	for (int i = 0; i < c_textures.size(); i++) SDL_DestroyTexture(c_textures[i]);
-	p_renderer = nullptr;
 }
 
 void Level::Update()
@@ -91,12 +93,6 @@ void Level::DrawLevel()
 			}
 		}
 	}*/
-}
-
-int Level::Clamp(int toClamp, int min, int max)
-{
-	if (toClamp < min) return min;
-	else if (toClamp > max) return max;
 }
 
 char Level::GetLevelCoord(int x, int y)

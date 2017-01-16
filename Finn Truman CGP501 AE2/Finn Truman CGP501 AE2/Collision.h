@@ -10,7 +10,7 @@
 class Collision : public Actor
 {
 public:
-	Collision(SDL_Renderer &renderer, Level &levelLayout, Vector position, std::vector<std::string> sprite);
+	Collision(Vector position, std::vector<std::string> sprite);
 	~Collision();
 	void Update();
 };

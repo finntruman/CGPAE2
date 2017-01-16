@@ -13,7 +13,7 @@ private:
 	std::string m_type[CLTBL_SIZE];
 
 public:
-	Collectible(SDL_Renderer &renderer, Level &levelLayout, Vector position, int type);
+	Collectible(Vector position, int type);
 	~Collectible();
 	
 	void Update();

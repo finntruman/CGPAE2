@@ -8,6 +8,9 @@
 
 Input::Input()
 {
+	if (!p_input) p_input = this;
+	else return;
+
 	for (int i = 0; i < KEYS_LIST_SIZE; i++)
 	{
 		m_keysPressed[i] = INACTIVE; //go through all of the keys and set them to inactive

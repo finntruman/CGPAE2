@@ -1,16 +1,13 @@
 #pragma once
-#include <string>
-#include <vector>
-#include "SDL.h"
+//#include "GameObject.h"
 
-class Actor;
+class GameObject;
 
-class Sprite
+class Sprite : public GameObject
 {
 private:
 	SDL_Surface* p_bitmapSurface;
 	SDL_Texture* p_bitmapTexture;
-	SDL_Renderer* p_renderer;
 
 	Actor* p_parent; //the sprite needs a pointer to its parent to get its position and facing variables
 	std::vector<std::string> c_spriteSequence; //the vector of strings is the sequence of images to cycle through to create animation
@@ -29,8 +26,9 @@ private:
 	//This cannot be public, as it would be disastrous to change the image without changing the sprite sequence
 
 public:
-	Sprite(SDL_Renderer &renderer, Actor &parent, std::vector<std::string> sprites);
+	Sprite();
 	~Sprite();
+	void Initialise(Actor &parent, std::vector<std::string> sprites); //Initalise is basically a constructor called from the Actor constructor
 
 	/*
 		In this logic "sprite" is considered a sequence of frames made up of "images"

@@ -1,18 +1,25 @@
 #include "Sprite.h"
-#include "Actor.h"
+#include "GameObject.h"
 
-Sprite::Sprite(SDL_Renderer &renderer, Actor &parent, std::vector<std::string> sprites)
-	: p_renderer(&renderer), p_parent(&parent), c_spriteSequence(sprites), m_spriteFrame(0), m_animationSpeed(1), m_animationDelay(0), m_useSpriteCollision(true)
-{
-	ChangeImage(c_spriteSequence[0]);
-}
+Sprite::Sprite()
+{}
 
 Sprite::~Sprite()
 {
 	if (p_bitmapTexture) SDL_DestroyTexture(p_bitmapTexture);
 	if (p_bitmapSurface) SDL_FreeSurface(p_bitmapSurface);
-	p_renderer = nullptr;
 	p_parent = nullptr;
+}
+
+void Sprite::Initialise(Actor &parent, std::vector<std::string> sprites)
+{
+	p_parent = &parent;
+	c_spriteSequence = sprites;
+	m_spriteFrame = 0;
+	m_animationSpeed = 1;
+	m_animationDelay = 0;
+	m_useSpriteCollision = true;
+	ChangeImage(c_spriteSequence[0]);
 }
 
 void Sprite::ChangeSprite(std::vector<std::string> images)
