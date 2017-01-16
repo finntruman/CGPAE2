@@ -18,21 +18,6 @@ Character::~Character()
 void Character::Update()
 {
 	ApplyMovement();
-	
-	//update bullets
-	//for (int i = 0; i < m_bullets.size(); i++)
-	//{
-	//	m_bullets[i]->Update();
-	//	if (
-	//		CollisionPoint_Map(m_bullets[i]->GetPosition()) //if there is a collision where the bullet is (precise sprite collision is unecesarry)
-	//		|| m_bullets[i]->GetPosition().x < 0 //or if the bullet's x is less than 0 (off the left side of the level)
-	//		|| m_bullets[i]->GetPosition().x > p_level->LevelSpaceToWorldSpace(p_level->GetWidth(), 0).x //or if the bullet's x is greater than the width of the level
-	//		)
-	//	{
-	//		delete m_bullets[i];
-	//		m_bullets.erase(m_bullets.begin() + i); //deleting a pointer's memory still means that that element in the vector is being taken up, it's just empty, so erasing the element reorganises the vector
-	//	}
-	//}
 	Actor::Update();
 }
 
@@ -51,13 +36,24 @@ bool Character::Shoot()
 {
 	if (m_ammo > 0)
 	{
-		Bullet* bullet = new Bullet(*p_renderer, *p_level, { m_position.x + p_sprite.GetSpriteWidth() / 2, m_position.y + p_sprite.GetSpriteHeight() / 2 }, 10);
+		int flip = m_facing == SDL_FLIP_HORIZONTAL ? -1 : 1; //this is set to -1 if the sprite is flipped (facing left) or 1 if not flipped (facing right)
+		//this is a fix to a bug where a bullet that a character fires will be overlapping themselves, therefor hitting them immediately
+		Bullet* bullet = new Bullet(*p_renderer, *p_level, { m_position.x + p_sprite.GetSpriteWidth() * flip, m_position.y + p_sprite.GetSpriteHeight() / 2 }, 10);
 		p_manager->AddBullet(*bullet);
 		bullet->SetFlip(m_facing);
 		m_ammo--;
 		return true;
 	}
 	else return false;
+}
+
+Vector Character::MoveTowards(Actor* target, int speed)
+{
+	Vector targetPos = target->GetPosition();
+	Vector returnValue;
+	returnValue.x = speed * Sign(targetPos.x - m_position.x); //will return -1, 0 or 1 if the target's x is less than, equal to or greater than our current position, respectively
+	returnValue.y = speed * Sign(targetPos.y - m_position.y);
+	return returnValue;
 }
 
 void Character::ApplyMovement()

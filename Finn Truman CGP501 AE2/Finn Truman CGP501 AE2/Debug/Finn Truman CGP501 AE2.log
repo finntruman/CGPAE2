@@ -1,30 +1,25 @@
-﻿Build started 05/01/2017 15:09:51.
+﻿Build started 08/01/2017 13:33:37.
      1>Project "E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Finn Truman CGP501 AE2\Finn Truman CGP501 AE2.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt AI.cpp Actor.cpp Character.cpp GameManager.cpp Main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt GameManager.cpp
          GameManager.cpp
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.h(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(78): warning C4150: deletion of pointer to incomplete type 'Menu'; no destructor called
-         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.h(14): note: see declaration of 'Menu'
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(106): warning C4018: '<': signed/unsigned mismatch
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(121): warning C4018: '<': signed/unsigned mismatch
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(183): warning C4474: 'printf' : too many arguments passed for format string
-         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(183): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(200): warning C4018: '<': signed/unsigned mismatch
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(208): warning C4018: '<': signed/unsigned mismatch
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(231): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-         Character.cpp
-     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.h(35): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         Main.cpp
-         Actor.cpp
-         AI.cpp
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\character.h(37): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\collectible.h(7): warning C4091: 'static ': ignored on left of 'COLLECTIBLES' when no variable is declared
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(107): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(138): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(153): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(160): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(248): warning C4474: 'printf' : too many arguments passed for format string
+         e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(248): note: placeholders and their parameters expect 0 variadic arguments, but 1 were provided
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(265): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(273): warning C4018: '<': signed/unsigned mismatch
+     1>e:\university work\year 2\computer games programming\assignment 2\finn truman cgp501 ae2\finn truman cgp501 ae2\gamemanager.cpp(308): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Debug\Finn Truman CGP501 AE2.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_ttf.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Debug\Finn Truman CGP501 AE2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\University work\Year 2\Computer Games Programming\Assignment 2\Finn Truman CGP501 AE2\Debug\Finn Truman CGP501 AE2.lib" /MACHINE:X86 Debug\Actor.obj
          Debug\AI.obj
          Debug\Bullet.obj
          Debug\Character.obj
+         Debug\Collectible.obj
          Debug\Collision.obj
          Debug\Enemy.obj
          Debug\EnemySoldier.obj
@@ -32,7 +27,6 @@
          Debug\Input.obj
          Debug\Level.obj
          Debug\Main.obj
-         Debug\Menu.obj
          Debug\Player.obj
          Debug\Sprite.obj
          Debug\Vector.obj
@@ -41,4 +35,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.89
+Time Elapsed 00:00:04.98

@@ -48,4 +48,3 @@ public:
 	int GetCollisionHeight() { return m_collisionHeight; }
 	int GetCollisionWidth() { return m_collisionWidth; }
 };
-

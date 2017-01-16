@@ -13,6 +13,15 @@ AI::~AI()
 	if (p_player) p_player = nullptr;
 }
 
+void AI::Update()
+{
+	if (CollisionSprite_Map(m_position.x + m_hspeed, m_position.y))
+	{
+		Jump();
+	}
+	Character::Update();
+}
+
 float AI::DistanceToPlayer()
 {
 	//pythagoras

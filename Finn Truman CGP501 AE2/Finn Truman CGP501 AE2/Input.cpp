@@ -56,11 +56,6 @@ void Input::Update()
 				//m_keysPressed[KEY_RIGHT] = UpdateKey(m_keysPressed[KEY_RIGHT]);
 				break;
 
-				//case SDLK_SPACE:
-				//	m_keysPressed[KEY_JUMP] = UpdateKey(m_keysPressed[KEY_JUMP], m_event.type);
-				//	//m_keysPressed[KEY_JUMP] = UpdateKey(m_keysPressed[KEY_JUMP]);
-				//	break;
-
 			case SDLK_SPACE:
 				m_keysPressed[KEY_SHOOT] = UpdateKey(m_keysPressed[KEY_SHOOT], m_event.type, m_event.key.state);
 				//m_keysPressed[KEY_SHOOT] = UpdateKey(m_keysPressed[KEY_SHOOT]);

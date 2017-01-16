@@ -18,5 +18,6 @@ protected:
 public:
 	AI(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, Vector position, std::vector<std::string> sprite, int health);
 	~AI();
+	void Update();
 };
 

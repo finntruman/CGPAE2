@@ -8,3 +8,8 @@ Enemy::Enemy(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, V
 Enemy::~Enemy()
 {
 }
+
+void Enemy::Update()
+{
+	AI::Update();
+}

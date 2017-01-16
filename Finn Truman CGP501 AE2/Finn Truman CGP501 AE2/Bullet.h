@@ -14,4 +14,3 @@ public:
 	~Bullet();
 	void Update();
 };
-

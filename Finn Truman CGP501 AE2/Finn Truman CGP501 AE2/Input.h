@@ -27,4 +27,3 @@ public:
 	bool KeyUp(KEYS_LIST key); //only returns true if the key is released
 	SDL_Event GetEvents() { return m_event; }
 };
-

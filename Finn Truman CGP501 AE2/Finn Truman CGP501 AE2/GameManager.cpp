@@ -1,11 +1,14 @@
 #include "GameManager.h"
 
+#include <math.h>
+#include <algorithm>
+
 #include "Input.h"
-#include "Menu.h"
 #include "Level.h"
 #include "Player.h"
 #include "EnemySoldier.h"
 #include "Bullet.h"
+#include "Collectible.h"
 
 GameManager::GameManager()
 {
@@ -52,15 +55,19 @@ GameManager::GameManager()
 	
 	//now we've finished SDL setup, make game objects
 	p_input = new Input();
-	//CreateMenu({ "Hello", "World", "The third test option" }, "DejaVu small");
 	p_level = new Level(*m_renderer, 640, 480);
 	CreatePlayer({ 70, 635 }, "assets/player.bmp", 100, 100);
 	SpawnEnemy({ 840, 512 }, 1, 10);
-
 }
 
 GameManager::~GameManager()
 {
+	std::for_each(p_collectibles.begin(), p_collectibles.end(), [](Collectible* collectible) { delete collectible; }); //I use a lambda expression to make a quick, throwaway function to delete the collectibles
+
+	std::for_each(p_enemies.begin(), p_enemies.end(), [](EnemySoldier* enemy) { delete enemy; }); //same for enemies
+
+	std::for_each(p_bullets.begin(), p_bullets.end(), [](Bullet* bullet) { delete bullet; }); //and bullets
+
 	if (p_player)
 	{
 		delete p_player;
@@ -71,12 +78,6 @@ GameManager::~GameManager()
 	{
 		delete p_level;
 		p_level = nullptr;
-	}
-
-	if (p_menu)
-	{
-		delete p_menu;
-		p_menu = nullptr;
 	}
 
 	if (p_input)
@@ -106,14 +107,45 @@ void GameManager::Update()
 	for (int i = 0; i < p_bullets.size(); i++)
 	{
 		p_bullets[i]->Update();
+
+		Vector bulletPos = p_bullets[i]->GetPosition();
+
+		//WALL/OOUT OF BOUNDS DETECTION
 		if (
-			CollisionPoint_Map(p_bullets[i]->GetPosition()) //if there is a collision where the bullet is (precise sprite collision is unecesarry)
+			CollisionPoint_Map(bulletPos) //if there is a collision where the bullet is (precise sprite collision is unecesarry)
 			|| p_bullets[i]->GetPosition().x < 0 //or if the bullet's x is less than 0 (off the left side of the level)
 			|| p_bullets[i]->GetPosition().x > p_level->LevelSpaceToWorldSpace(p_level->GetWidth(), 0).x //or if the bullet's x is greater than the width of the level
 			)
 		{
 			delete p_bullets[i];
 			p_bullets.erase(p_bullets.begin() + i); //deleting a pointer's memory still means that that element in the vector is being taken up, it's just empty, so erasing the element reorganises the vector
+			break; //break the for loop since the bullet has been deleted, it will crash if it tries to detect collision again with enemies
+		}
+
+		//PLAYER COLLISION
+		if (DistanceTo(bulletPos, p_player->GetPosition()) <= 10)
+		{
+			if (CollisionSprite_Object(p_bullets[i], p_player))
+			{
+				p_player->ChangeHealth(-5);
+				delete p_bullets[i];
+				p_bullets.erase(p_bullets.begin() + i);
+				break;
+			}
+		}
+
+		//ENEMY COLLISION
+		for (int j = 0; j < p_enemies.size(); j++)
+		{
+			if (DistanceTo(bulletPos, p_enemies[j]->GetPosition()) <= 10) //10 is a magic number that is the speed of the bullet, bit of bad design. This is here since, if the target is not within range of the bullet to even hit it at its speed, what's the point in checking collision?
+			{
+				if (CollisionSprite_Object(p_bullets[i], p_enemies[j]))
+				{
+					p_enemies[j]->ChangeHealth(-5); //5 is another magic number that is the bullet's damage
+					delete p_bullets[i];
+					p_bullets.erase(p_bullets.begin() + i); //it's because of this bit of code here that it'd be better for me to have used a list instead of a vector for the bullets
+				}
+			}
 		}
 	}
 
@@ -124,12 +156,38 @@ void GameManager::Update()
 		else p_enemies[i]->Update();
 	}
 
+	//COLLECTIBLES
+	for (int i = 0; i < p_collectibles.size(); i++)
+	{
+		p_collectibles[i]->Update();
+		if (DistanceTo(p_collectibles[i]->GetPosition(), p_player->GetPosition()) <= p_collectibles[i]->GetSprite()->GetCollisionWidth())
+		{
+			if (CollisionSprite_Object(p_collectibles[i], p_player))
+			{
+				if (p_collectibles[i]->ReturnType() == "ammo")
+				{
+					p_player->ChangeAmmo(5);
+				}
+				else if (p_collectibles[i]->ReturnType() == "health")
+				{
+					p_player->ChangeHealth(5);
+				}
+				delete p_collectibles[i];
+				p_collectibles.erase(p_collectibles.begin() + i);
+			}
+		}
+	}
+	/*
+		I would have liked to make it the player's responsibility to look for collectible collisions, change stats and delete the collectible.
+		But due to the limitations of how I programmed it, that was not possible. This could've all been avoided if I had implimented the GameObject class I discussed in the documentation.
+	*/
+
 	//##UI##
 	DrawUI({
-		"Health: " + std::to_string(p_player->GetHealth()),
-		"Ammo: " + std::to_string(p_player->GetAmmo()), " ",
-		"X: " + std::to_string(p_player->GetPosition().x),
-		"Y: " + std::to_string(p_player->GetPosition().y)
+		"Health: " + std::to_string(p_player->GetHealth())
+		,"Ammo: " + std::to_string(p_player->GetAmmo()), " "
+		/*,"X: " + std::to_string(p_player->GetPosition().x)
+		,"Y: " + std::to_string(p_player->GetPosition().y)*/ //removing this code blocvk displays the player's X and Y on-screen. Used for debug purposes.
 	});
 
 	int endTicks = SDL_GetTicks() - startTicks; //how many ticks have passed since we last got the ticks?
@@ -157,6 +215,13 @@ void GameManager::CreatePlayer(Vector position, std::string sprite, int ammo, in
 void GameManager::SpawnEnemy(Vector position, int health, int points, std::string sprite)
 {
 	p_enemies.push_back(new EnemySoldier(*this, *m_renderer, *p_level, position, { sprite }, 10, 1));
+}
+
+void GameManager::CreateCollectible(Vector position, int type)
+{
+	//0 = health
+	//1 = ammo
+	p_collectibles.push_back(new Collectible(*m_renderer, *p_level, position, type));
 }
 
 void GameManager::UpdateText(int x, int y, std::string msg, SDL_Color colour)
@@ -209,6 +274,7 @@ void GameManager::KillEnemy(EnemySoldier* toKill)
 	{
 		if (toKill == p_enemies[i])
 		{
+			CreateCollectible(p_enemies[i]->GetPosition(), 1);
 			delete p_enemies[i];
 			p_enemies.erase(p_enemies.begin() + i);
 			return;
@@ -219,6 +285,17 @@ void GameManager::KillEnemy(EnemySoldier* toKill)
 bool GameManager::CheckEscape()
 {
 	return p_input->KeyPressed(KEY_ESCAPE);
+}
+
+float GameManager::DistanceTo(Vector point1, Vector point2)
+{
+	Vector pointB(point1.x, point2.y);
+
+	float AtoB = pointB.x - point1.x;
+	float BtoC = point2.y - pointB.y;
+
+	//sqrt(A*A + B*B)
+	return std::sqrt(AtoB*AtoB + BtoC*BtoC);
 }
 
 void GameManager::AddBullet(Bullet &bullet)
@@ -260,7 +337,6 @@ bool GameManager::CollisionSprite_Object(Actor* collision1, Actor* collision2)
 		spr1_T < spr2_B &&
 		spr1_B > spr2_T)
 	{
-		printf("collision");
 		return true;
 	}
 	else return false;

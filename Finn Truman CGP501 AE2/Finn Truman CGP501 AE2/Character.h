@@ -19,21 +19,22 @@ protected:
 	int m_ammo, m_health, m_terminalVelocity;
 	float m_hspeed, m_vspeed, m_moveSpeed, m_jumpSpeed, m_gravity;
 	bool m_grounded;
-	//std::vector<Bullet*> m_bullets;
 
 	//methods
 	void Update();
 	bool Jump();
 	bool Shoot();
+	Vector MoveTowards(Actor* target, int speed); //returns a movement vector so the speed variables can be tweaked if needed
 
 public:
 	Character(GameManager &manager, SDL_Renderer &renderer, Level &levelLayout, Vector position, std::vector<std::string> sprite, int health);
 	~Character();
 
 	void SetAmmo(int ammo) { m_ammo = ammo; }
+	void ChangeAmmo(int diff) { m_ammo += diff; }
 	void SetHealth(int health) { m_health = health; }
+	void ChangeHealth(int diff) { m_health += diff; }
 	void SetSpeed(int speed) { m_moveSpeed = speed; }
 	int GetAmmo() { return m_ammo; }
 	int GetHealth() { return m_health; }
 };
-
